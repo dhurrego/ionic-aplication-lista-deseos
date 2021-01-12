@@ -20,8 +20,6 @@ export class Tab1Page {
 
   async agregarLista() {
 
-  	//this.router.navigateByUrl('tabs/tab1/agregar');
-
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Nueva lista',
@@ -47,8 +45,11 @@ export class Tab1Page {
               return;
             }
 
-            this.deseosService.crearLista( data.titulo );
-            // Crear la lista
+            const listaId = this.deseosService.crearLista( data.titulo );
+
+            // Crear la los item de las listas
+
+            this.router.navigateByUrl(`tabs/tab1/agregar/${ listaId }`);
 
           }
         }
