@@ -9,14 +9,10 @@ export class DeseosService {
 
   public listas: Lista[] = [];
 
-  constructor() {
+  constructor() {}	
 
-  	const lista1 = new Lista('Recolertar piedras del infinito');
-  	const lista2 = new Lista('Héroes a desaparecer');
-
-  	this.listas.push(lista1, lista2);
-
-  	
-
-  }	
+  crearLista( titulo: string ) {
+  	const nuevaLista = new Lista( titulo );
+  	this.listas.push( nuevaLista );
+  }
 }
