@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { DeseosService } from '../../services/deseos.service';
+import { Lista } from '../../models/lista.model';
 
 @Component({
   selector: 'app-tab2',
@@ -9,6 +11,11 @@ import { DeseosService } from '../../services/deseos.service';
 })
 export class Tab2Page {
 
-  constructor( public deseosServicios: DeseosService ) {}
+  terminada: boolean = true;
+
+  constructor( 
+  	public deseosService: DeseosService, 
+  	private router: Router,
+  ) {}
 
 }

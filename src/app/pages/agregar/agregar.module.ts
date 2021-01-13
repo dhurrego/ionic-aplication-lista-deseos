@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { AgregarPageRoutingModule } from './agregar-routing.module';
 
+import { PipesModule } from '../../pipes/pipes.module';
 import { AgregarPage } from './agregar.page';
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AgregarPage } from './agregar.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    AgregarPageRoutingModule
+    AgregarPageRoutingModule,
+    PipesModule
   ],
   declarations: [AgregarPage]
 })

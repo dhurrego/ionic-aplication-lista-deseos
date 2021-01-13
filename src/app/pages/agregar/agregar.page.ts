@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { DeseosService } from '../../services/deseos.service';
 
@@ -18,11 +18,15 @@ export class AgregarPage implements OnInit {
 
   constructor( 
   	private deseosService: DeseosService,
-  	private route: ActivatedRoute
+  	private route: ActivatedRoute,
+  	private router: Router
   ) { 
   	
   	const listaId = this.route.snapshot.paramMap.get('listaId');
-	this.lista = this.deseosService.obtenerLista( listaId );  	
+	this.lista = this.deseosService.obtenerLista( listaId );
+	if(!this.lista){
+		this.router.navigate(['/']);
+	}  	
   }
 
   ngOnInit() {

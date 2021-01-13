@@ -4,6 +4,8 @@ import { AlertController } from '@ionic/angular';
 
 import { DeseosService } from '../../services/deseos.service';
 
+import { Lista } from '../../models/lista.model';
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -11,6 +13,7 @@ import { DeseosService } from '../../services/deseos.service';
 })
 export class Tab1Page {
 
+  terminada = false;
 
   constructor( 
   	public deseosService: DeseosService, 
